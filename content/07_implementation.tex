@@ -2,11 +2,27 @@
 \label{ch:implementation}
 
 In diesem Kapitel wird die Implementierung der Anwendung beschrieben.
-Hierbei wird exemplarisch auf zwei wichtige Funktionen der Anwendung eingegangen.
-Diese sind die Verwaltung des Benutzerprofils und die Erstellung und Anzeige von Beiträgen.
+% Hierbei wird exemplarisch auf zwei wichtige Funktionen der Anwendung eingegangen.
+% Diese sind die Verwaltung des Benutzerprofils und die Erstellung und Anzeige von Beiträgen.
 
 Da der komplette Code und viele Screenshots den Rahmen dieses Kapitels sprengen würden, wird in den einzelnen Kapiteln nur ein Auszug gezeigt.
 Den kompletten Code findet man direkt im Github Repository unter \url{https://github.com/Jonasdero/digital-hometown-frontend}.
+
+ \section{Landing Page}
+ \label{sec:landing_page}
+ 
+Bei dem Aufruf der Plattform \glqq Digital Dahoam\grqq \ wird der Nutzer auf die Landing Page (s. \autoref{fig:landing_page}) weitergeleitet. Diese ist abhängig davon, ob der Nutzer eingeloggt ist oder nicht.
+
+Auf der Landing Page wird die Vision der Plattform vorgestellt. Bei dem Projekt \glqq Digital Dahoam\grqq \ geht es darum, dass sich Menschen in der Nachbarschaft vernetzen können. Die Plattform soll zudem die Menschen dazu motivieren, anderen zu helfen, bzw. selbst um Hilfe zu bitten. Insbesondere für neu zugezogene Menschen soll die Plattform eine Möglichkeit sein, die Umgebung zu entdecken und interessante Vereine kennenzulernen.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/boas/21_landing_page.png}
+  \caption[]{Bildschirmaufnahme der Startseite für nicht eingeloggte Nutzer}
+  \label{fig:landing_page}
+\end{figure}
+
+Will sich ein Benutzer bspw. ein Vereinsvorstand mit seinem Verein registrieren, kann er über den Button \glqq Für Vereine\grqq \ zur Landing Page für Vereine navigieren. Über die Landing Page für Vereine kann der Vorstand seinen Verein bei der Plattform registrieren oder sich einloggen (s. \autoref{fig:landing_page_verein}). Der Inhalt der Landing Page beschreibt, welche Vorteile die Plattform für Vereine bietet.
 
 \section{Profil}
 \label{sec:profile}
@@ -59,6 +75,97 @@ Bei der Anmeldung wird dann geprüft, welchen Typ der Benutzer hat und die Daten
 Dadurch kann mit einer Datenstruktur gearbeitet werden, die für beide Typen geeignet ist.
 Andere Ansichten basieren dann häufig auf der Unterscheidung zwischen Nutzern und Vereinen.
 Die Struktur des Datensatzes kann man in Abbildung \ref{fig:firestoreUser} sehen.
+
+\section{Authentifizierung}
+\label{sec:authentifizierung}
+
+Essentiell für ein soziales Netzwerk ist es, dass die Benutzer sich mit einem Profil registrieren können. Wie das im Detail funktioniert und wie die Authentifizierung implementiert wurde, wird in diesem Kapitel beschrieben.
+
+\subsection{Verwendung des \glqq Firebase-Authentication\grqq-Services}
+\label{sec:firebase_authentifizierung}
+Die Implementierung der Authentifizierung wird mit dem Backend-as-a-Service-Anbieter Firebase durchgeführt. Firebase bietet eine Schnittstelle, die es ermöglicht, Profile anzulegen sowie den Anmelde- und Registrierungsprozess mit wenigen Zeilen Code zu implementieren.
+
+Durch die verschiedenen Authentifizierungsmethoden, die Firebase anbietet, kann der Nutzer sich mit E-Mail und Passwort, Google oder Facebook anmelden. Die Authentifizierungsmethoden können einfach in der Firebase-Konsole aktiviert werden.
+
+Es wird zu dem die Möglichkeit geboten, dass Nutzer, die ihre Zugangsdaten vergessen haben, eine E-Mail mit einem Link zum Zurücksetzen des Passworts erhalten.
+
+Die Beschriebenen Funktionen decken also einen standardmäßigen Anmelde- und Registrierungsprozess ab.
+
+\subsection{Zugriff auf die Profilinformationen}
+\label{sec:zugriff_profilinformationen}
+Wie bei der React-Einführung beschrieben, ist es aufwendig, Informationen wie die des Profils über die gesamte Anwendung hinweg durchzureichen. Dafür wurde auch bereits die Möglichkeit des React Contexts vorgestellt. Da dieses Konzept auch für die Profilinformationen eingesetzt wird hier nochmal ein Beispiel der Implementierung gezeigt.
+
+Das in \autoref{lst:authcontext} stellt das Interface des Contexts dar, das für alle Components befüllt wird. Die Profilinformationen sind im Attribute \texttt{currentUser} gespeichert.
+
+\begin{lstlisting}[language=JavaScript, caption=Auszug aus dem Interface des Authentifizierungscontexts, label={lst:authcontext}]
+interface AuthContextI {
+  currentUser: User | Club | undefined | null
+  setCurrentUser: React.Dispatch<React.SetStateAction<User | Club | undefined | null>>
+  logOut: () => void
+  logIn: (email: string, password: string) => void
+  signUpWithEmail: (email: string, password: string, displayName: string, isOrg: boolean) => Promise<void>
+  signUpOAuth: (providerName: "google" | "facebook", isOrg: boolean) => void
+  // usw.
+}
+\end{lstlisting}
+
+% \autocite{attlassian2023}
+Um den Vorteil des Contexts für die Codequalität hervorzuheben wird in \autoref{lst:authcontext_impl} dargestellt, wie einfach es möglich ist, die zentral befüllten Attribute in einer beliebigen React-Komponente zu verwenden.
+Hierbei wird das Prinzip der Higher-Order-Components (HOC) genutzt, das zuvor implementiert wurde. Es ist lediglich notwendig, die implementierte Komponente mit dem HOC \texttt{withAuth} zu umschließen. Dieses HOC stellt der jeweiligen Komponente die Attribute des Contexts als Props zur Verfügung.
+
+\begin{lstlisting}[language=JavaScript, caption=Verwendung des Authentifizierungscontext-HOCs, label={lst:authcontext_impl}]
+function SignOut({ logOut }: AuthContextI) {
+  useEffect(() => logOut(), [logOut])
+  return <Navigate to="/" />
+}
+
+export default withAuth(SignOut)  
+\end{lstlisting}
+
+Das Component \texttt{SignOut} bekommt hier beispielsweise durch das HOC automatisch die Funktion \texttt{logOut} als Prop übergeben, die dann zum Ausloggen des Benutzers verwendet wird.
+
+\subsection{Authentifizierungsprozess}
+\label{sec:authentifizierungsprozess}
+
+Im folgenden wird nun anhand von Bildschirmaufnahmen gezeigt, wie der Authentifizierungsprozess abläuft.
+
+Beim Klick auf den Registrieren-Button der Landing-Page wird man auf eine Seite weitergeleitet, über die Benutzername, Email und Passwort eingegeben werden können (s. \autoref{fig:registrierung}). Fehlerhafte Eingaben der E-Mail-Adresse, sowie die redundante Eingabe des Passworts werden hierbei validiert.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/boas/21_registrieren.png}
+  \caption[]{Registrierungsseite}
+  \label{fig:registrierung}
+\end{figure}
+
+Nach der erfolgreichen Registrierung des Nutzers, wird er zunächst auf eine Seite geführt, auf der er seine Profilinformationen um das Geburtsdatum und die Postleitzahl ergänzen kann (s. \autoref{fig:registrieren_profilinfo}).
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/boas/21_registrieren_profilinfo.png}
+  \caption[]{Ergänzen der Profilinformationen beim ersten Anmelden}
+  \label{fig:registrieren_profilinfo}
+\end{figure}
+
+Nach der erfolgreichen Registrierung wird der Nutzer auf sein Profil weitergeleitet, wo er u. a. Interessen hinterlegen kann, um von Nutzern gefunden zu werden, welche die gleichen Interessen haben. Details hierzu sind dem Projektbericht von Jonas Roser zu entnehmen.
+
+Eine besonders einfache Möglichkeit, sich bei der Plattform zu registrieren, bzw. anzumelden ist die Authentifizierung über Google. Beim Klick auf das Google-Icon öffnet sich direkt der Google-OAuth-Dialog (s. \autoref{fig:anmelden_google}). Dies steigert die Usability der Plattform, da der Nutzer nicht mehr die E-Mail-Adresse und das Passwort eingeben muss.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/boas/21_anmelden_google.png}
+  \caption[]{Authentifizierungs-Dialog beim Anmelden mit Google}
+  \label{fig:anmelden_google}
+\end{figure}
+
+Wenn der Nutzer sich mit einer E-Mail-Adresse registriert hat, kann er sich auf folgender Seite anmelden (s. \autoref{fig:anmeldung}).
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/boas/21_anmelden.png}
+  \caption[]{Anmeldeseite}
+  \label{fig:anmeldung}
+\end{figure}
 
 \clearpage
 
@@ -253,3 +360,91 @@ Auf der Startseite werden aktuelle Beiträge aus der Nähe angezeigt, sowie die 
     \label{fig:dashboard}
   \end{centering}
 \end{figure}
+
+\section{Chat}
+\label{sec:chat}
+
+Ein wichtiges Tool für das soziale Netzwerk \glqq Digital Hometown\grqq \ ist der Chat, da hier die Personen in Kontakt treten und sich austauschen können.
+
+Auf technischer Ebene sind für einen Chat mehrere Technologien erforderlich, wodurch die Umsetzung nicht trivial ist. Neben den Laden der Bereits gesendeten Nachrichten und dem Absenden von Nachrichten, ist es für eine gute Usability notwendig, dass neue Nachrichten sofort bei allen Chatteilnehmern sichtbar sind. Diese Anforderung kann in effizienter Weise durch die Verwendung von bidirektionalen WebSocket-Verbindungen ermöglicht werden.
+
+\subsection{Firebase Realtime Database für den Chat}
+\label{sec:firebase_realtime_db_chat}
+
+Für den Chat wird die Firebase Realtime Database (Realtime DB) verwendet. Dadurch wird die Implementierung deutlich vereinfacht, da die entsprechende JavaScript Bibliothek einfach in die React Anwendung integriert werden kann. Eine Echtzeitsynchronisation zwischen den Clients (Browseranwendungen der User) und der Datenbank kann mit geringem Aufwand umgesetzt werden. Die Realtime DB ist eine NoSQL Datenbank.
+Die Firebase DB wird in diesem Projekt ausschließlich für den Chat verwendet und hat dabei zwei Hauptwurzelelemente (s. \autoref{fig:hauptwurzel_realtime_db}) verwendet werden. Bei dem Design wurde darauf geachtet, dass die einzelnen Hauptwurzelelemente keine zu große Verschachtelung aufweisen, um eine gute Performanz zu gewährleisten.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/boas/21_hauptwurzel_realtime_db.png}
+  \caption[]{Hauptwurzelelemente der Realtime DB}
+  \label{fig:hauptwurzel_realtime_db}
+\end{figure}
+
+
+\subsection{Autorisierung der Nachrichten und Chaträume}
+\label{sec:autorisierung_chat}
+Eine wichtige Anforderung für die Implementierung einer Chatfunktionalität ist es, dass Nachrichten nur von Mitgliedern des jeweiligen Chatraums gelesen werden können. Dies wird mit den Realtime DB Regeln umgesetzt. Ein Auszug hiervon ist in \autoref{lst:rules_realtime_db} dargestellt. Kurz zusammengefasst ermöglicht diese Konfiguration, dass nur Nachrichten von Benutzern gelesen und geschrieben werden können, die ein Mitglied des Chatraumes sind.
+
+\begin{lstlisting}[language=JavaScript, caption=Realtime DB Regeln für Chatnachrichten, label={lst:rules_realtime_db}]
+{
+  "rules": {
+    "messages": {
+      "$roomUid": {
+        ".read": "root.child('rooms/' + $roomUid + '/members').hasChild(auth.uid)",
+        ".write": "root.child('rooms/' + $roomUid + '/members').hasChild(auth.uid)"
+      },
+      "messages": {
+        ".indexOn": "sendAt"
+      }
+    },
+    ...
+  }
+}
+\end{lstlisting}
+
+\subsection{Benutzung des Chats}
+\label{sec:benutzung_chat}
+
+Im folgenden wird anhand von Screenshots die Benutzung des Chats beschrieben. \autoref{fig:chat_screenshot} zeigt die Standardansicht des Chats. Auf der linken Seite sind die Chaträume aufgelistet. Die Chaträume sind in zwei Kategorien unterteilt. Zum einen gibt es die Chaträume, die mit Einzelpersonen erstellt wurden und zum anderen die Chaträume mit mehreren Personen (Gruppenchats). In der Liste der Chaträume werden Gruppenchats mit einem Gruppenicon hervorgehoben.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/boas/21_chat.png}
+  \caption[]{Ansicht des Chats in der Anwendung}
+  \label{fig:chat_screenshot}
+\end{figure}
+
+Über den Button \glqq Chat hinzufügen\grqq \ wir die in \autoref{fig:new_personal_chat} dargestellte Ansicht geöffnet, wo alle Personen der Plattform angezeigt werden. Hier kann ein neuer Chat mit einer Einzelperson erstellt werden.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/boas/21_new_chat.jpeg}
+  \caption[]{Hinzufügen von Chats mit Einzelpersonen}
+  \label{fig:new_personal_chat}
+\end{figure}
+
+Das Hinzufügen von Gruppenchats erfolgt über den Button \glqq Gruppe hinzufügen\grqq. Der Ablauf sieht hier wie folgt aus. Zuerst wird automatisch ein neuer Chatraum erstellt. Wird dieser ausgewählt, lässt sich über einen Button die in \autoref{fig:edit_chat_group} dargestellte Ansicht öffnen. Hier können die Mitglieder des Chatraumes hinzugefügt werden, indem die entsprechenden Personen aus der Liste ausgewählt werden. Es besteht zudem die Möglichkeit, der Chatgruppe einen anderen Namen zu geben.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/boas/21_edit_chat_group.jpeg}
+  \caption[]{Chatgruppe umbenennen und Mitglieder hinzufügen}
+  \label{fig:edit_chat_group}
+\end{figure}
+
+\subsection{Verknüpfung von Beitragen mit dem Chatraum des Beitragautors}
+\label{sec:beitrag_chat_verknüpfung}
+
+Die Motivation des in diesem Absatz beschriebenen Features wird mit folgendem Fallbeispiel erläutert.
+
+Angenommen, ein Benutzer meldet sich an, da er an Fußball interessiert ist und gerne mit Menschen aus seiner Nachbarschaft gerne zum Fußball spielen treffen möchte. Er sieht nun einen Beitrag, der genau diesem Bedürfnis entspricht. Wie in \autoref{fig:beitrag_nachricht} dargestellt, kann er nun über den Button \glqq Nachricht an Autor\grqq direkt zum Chatraum des Beitragautors gelangen. Dort kann er den Beitragautor anschreiben und sich mit ihm zum Fußball spielen treffen.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=.7\textwidth]{figures/boas/21_beitrag_nachricht.jpg}
+  \caption[]{Möglichkeit von einem Beitrag direkt zum Chatraum des Beitragautors zu gelangen}
+  \label{fig:beitrag_nachricht}
+\end{figure}
+
+Im Hintergrund muss dafür der gemeinsame Chatraum ermittelt werden. Falls dieser noch nicht existiert, muss er erstellt werden. Wird dann der Nutzer auf die Chatseite weitergeleitet, öffnet sich automatisch der entsprechende Chatraum.
