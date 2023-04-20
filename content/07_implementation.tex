@@ -8,12 +8,13 @@ In diesem Kapitel wird die Implementierung der Anwendung beschrieben.
 Da der komplette Code und viele Screenshots den Rahmen dieses Kapitels sprengen würden, wird in den einzelnen Kapiteln nur ein Auszug gezeigt.
 Den kompletten Code findet man direkt im Github Repository unter \url{https://github.com/Jonasdero/digital-hometown-frontend}.
 
- \section{Landing Page}
- \label{sec:landing_page}
- 
-Bei dem Aufruf der Plattform \glqq Digital Dahoam\grqq \ wird der Nutzer auf die Landing Page (s. \autoref{fig:landing_page}) weitergeleitet. Diese ist abhängig davon, ob der Nutzer eingeloggt ist oder nicht.
 
-Auf der Landing Page wird die Vision der Plattform vorgestellt. Bei dem Projekt \glqq Digital Dahoam\grqq \ geht es darum, dass sich Menschen in der Nachbarschaft vernetzen können. Die Plattform soll zudem die Menschen dazu motivieren, anderen zu helfen, bzw. selbst um Hilfe zu bitten. Insbesondere für neu zugezogene Menschen soll die Plattform eine Möglichkeit sein, die Umgebung zu entdecken und interessante Vereine kennenzulernen.
+\section{Landing-Page}
+\label{sec:landing_page}
+
+Bei dem Aufruf der Plattform \glqq Digital Dahoam\grqq \ wird der Nutzer auf die Landing-Page (s. \autoref{fig:landing_page}) weitergeleitet. Diese ist abhängig davon, ob der Nutzer eingeloggt ist oder nicht.
+
+Auf der Landing-Page wird die Vision der Plattform vorgestellt. Bei dem Projekt \glqq Digital Dahoam\grqq \ geht es darum, dass sich Menschen in der Nachbarschaft vernetzen können. Die Plattform soll zudem die Menschen dazu motivieren, anderen zu helfen, bzw. selbst um Hilfe zu bitten. Insbesondere für neu zugezogene Menschen soll die Plattform eine Möglichkeit sein, die Umgebung zu entdecken und interessante Vereine kennenzulernen.
 
 \begin{figure}[!htb]
   \centering
@@ -23,6 +24,19 @@ Auf der Landing Page wird die Vision der Plattform vorgestellt. Bei dem Projekt 
 \end{figure}
 
 Will sich ein Benutzer bspw. ein Vereinsvorstand mit seinem Verein registrieren, kann er über den Button \glqq Für Vereine\grqq \ zur Landing Page für Vereine navigieren. Über die Landing Page für Vereine kann der Vorstand seinen Verein bei der Plattform registrieren oder sich einloggen (s. \autoref{fig:landing_page_verein}). Der Inhalt der Landing Page beschreibt, welche Vorteile die Plattform für Vereine bietet.
+
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/boas/21_landing_page_verein.png}
+  \caption[]{Bildschirmaufnahme der Startseite für nicht eingeloggte Vereine}
+  \label{fig:landing_page_verein}
+\end{figure}
+
+Wenn der Benutzer eingeloggt ist, wird er auf das Dashboard weitergeleitet, das aktuelle Beiträge und Veranstaltungen anzeigt.
+
+Da die Landing-Page eine statische Seite darstellt, wird hier nicht weitere auf die Implementierung eingegangen.
+
 
 \section{Profil}
 \label{sec:profile}
@@ -140,18 +154,18 @@ Beim Klick auf den Registrieren-Button der Landing-Page wird man auf eine Seite 
 
 Nach der erfolgreichen Registrierung des Nutzers, wird er zunächst auf eine Seite geführt, auf der er seine Profilinformationen um das Geburtsdatum und die Postleitzahl ergänzen kann (s. \autoref{fig:registrieren_profilinfo}).
 
-\begin{figure}[!htb]
+\begin{figure}[htb]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/boas/21_registrieren_profilinfo.png}
   \caption[]{Ergänzen der Profilinformationen beim ersten Anmelden}
   \label{fig:registrieren_profilinfo}
 \end{figure}
 
-Nach der erfolgreichen Registrierung wird der Nutzer auf sein Profil weitergeleitet, wo er u. a. Interessen hinterlegen kann, um von Nutzern gefunden zu werden, welche die gleichen Interessen haben. Details hierzu sind dem Projektbericht von Jonas Roser zu entnehmen.
+Nach der erfolgreichen Registrierung wird der Nutzer auf sein Profil weitergeleitet, wo er u. a. Interessen hinterlegen kann, um von Nutzern gefunden zu werden, welche die gleichen Interessen haben. Details hierzu sind in \autoref{sec:profilepictures} beschrieben.
 
 Eine besonders einfache Möglichkeit, sich bei der Plattform zu registrieren, bzw. anzumelden ist die Authentifizierung über Google. Beim Klick auf das Google-Icon öffnet sich direkt der Google-OAuth-Dialog (s. \autoref{fig:anmelden_google}). Dies steigert die Usability der Plattform, da der Nutzer nicht mehr die E-Mail-Adresse und das Passwort eingeben muss.
 
-\begin{figure}[!htb]
+\begin{figure}[htb]
   \centering
   \includegraphics[width=0.6\textwidth]{figures/boas/21_anmelden_google.png}
   \caption[]{Authentifizierungs-Dialog beim Anmelden mit Google}
@@ -160,7 +174,7 @@ Eine besonders einfache Möglichkeit, sich bei der Plattform zu registrieren, bz
 
 Wenn der Nutzer sich mit einer E-Mail-Adresse registriert hat, kann er sich auf folgender Seite anmelden (s. \autoref{fig:anmeldung}).
 
-\begin{figure}[!htb]
+\begin{figure}[htb]
   \centering
   \includegraphics[width=0.5\textwidth]{figures/boas/21_anmelden.png}
   \caption[]{Anmeldeseite}
