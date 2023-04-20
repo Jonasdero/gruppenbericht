@@ -19,3 +19,4 @@ output
 *.tmp
 *.bak
 *.ist
+.DS_Store
