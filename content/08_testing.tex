@@ -1,2 +1,68 @@
 \chapter{Testing}
 \label{ch:testing}
+
+Diese Kapitel beschäftigt sich mit dem Prozess des Testens in diesem Projekt. Dabei soll zunächst wird etwas Theorie vorgestellt, in der klar gemacht werden soll, was Testen eigentlich ist, wie der Test Prozess im Projekt nach SCRUM gelebt wurde und welche Aufgaben dem Tester zufallen. Abgeschlossen wird dieses Kapitel dem beispielhaften Aufzeigen der Umsetzung der definierten Testmethoden in diesem Projekt.
+Das Testen hat auch in SCRUM einen hohen Stellenwert. Jedes agile Team besteht aus zumindest ein bis zwei ausgebildete Tester. Weiterhin stehen dem Team – so erforderlich – ergänzend noch einige Support-Teams oder auch einzelne Fachexperten zur Verfügung, die für Spezialthemen herangezogen werden können.
+
+
+Die Rolle des Testers sollte ein fester Bestandteil eines cross-funktionalen Teams, die Qualitätssicherung automatisch in jedem Entwicklungszyklus integriert sein. Das agile Testen im SCRUM muss so gestaltet sein, dass es die Ziele der agilen Entwicklung unterstützt. Das heißt, es muss auf hohe Kundenzufriedenheit, hohe Produktivität und hohe Entwicklungsgeschwindigkeit ausgerichtet sein. Es muss schnell auf Änderungen reagieren können und selbstorganisiert sein.
+Als agiles Testen wird das Testen von Software im Rahmen eines agilen Entwicklungsprojekts bezeichnet. Testen in agilen Entwicklungsprojekten bedarf dabei vor allem eines Fokus auf die Unterstützung des Entwicklungsteams.
+
+
+\section{Umsetzung im Projekt}
+\label{sec:UmsetzungTest}
+
+Hier soll nun genauer erläutert werden, welche der Testmethoden in dem Projekt genutzt wurden, um möglichste hohe fehlerfrei Qualität unsere Plattform zu gewährleisten.
+
+
+\subsection{Einsatz im Projekt}
+\label{sub:UmsetzungTestGGUserStories}
+
+Beim Abtesten der User-Stories wurde das Verfahren des Black-Box Testens angewandt. Bei einem Black-Box-Test werden die Testfälle ausschließlich aus der Spezifikation (User-Stories) des zu testenden Objekts abgeleitet, ohne dabei dessen innere Struktur, also Architektur und Code, zu berücksichtigen (- diese werden als „Black Box“ behandelt). Es wird also nur das von außen sichtbare Verhalten des Testobjektes beobachtet.
+
+Dabei wurde als Akzeptanzkriterium die Defintion of Done der einzelnen User Stories genutzt. Dabei wurde der Fokus auf das positive Testing und negative Testing gelegt. Zusätzlich wurden aber auch einige Grenzwert-Testfälle spezifiziert, wo dies nötig war, und durchgeführt.
+
+\textbf{Positive Testing:}
+Positivtests sind eine Art von Softwaretests, bei denen davon ausgegangen wird, dass alles so abläuft wie erwartet. Es wird mit der Annahme durchgeführt, dass nur gültige und relevante Dinge auftreten werden.
+
+\textbf{Negative Testing:}
+Negativtests sind eine Art von Softwaretests, die durchgeführt werden, um das System auf unerwartete Bedingungen zu prüfen. Negative Tests spielen eine wichtige Rolle bei der Entwicklung leistungsfähiger Software. Dabei wird geprüft, wie sich die Software unter solchen unerwarteten Bedingungen verhält.
+
+\textbf{Grenzwert-Testing}
+Das Testen von Grenzwerten testet extreme Grenzen der Eingangswerte. Unter extreme Grenzen fal-len Enden wie Start-End-, Lower-Upper-, Maximum-Minimum-, Just Inside-Just Outside-Werte. Das Testen wird als 'Testen von Grenzwerten' bezeichnet.
+Die Umsetzung soll nun im Folgenden anhand eines Beispiels genauer erklärt werden. In diesem Beispiel wird der Fokus nur auf die Angabe des Gültigkeitsdatums gelegt (DH-179).
+
+\subsection{Regressions-Test}
+\label{sub:UmsetzungTestRegression}
+
+Wenn eine Software durch die Einführung neuer oder geänderter Funktionen an Funktionalität verliert, spricht man von einem Rückschritt zu einem weniger entwickelten Zustand. Selbst geringfügige Änderungen an der Software oder am ursprünglichen Code können zu erheblichen Fehlern wie Abstürzen, Störungen und teilweisem oder vollständigem Verlust der Funktionalität führen.
+Regressionstests dienen dazu, diese Fehler zu erkennen und die Anwendung wieder zu stabilisieren. Sowohl funktionale als auch nicht-funktionale Testverfahren bewerten die Auswirkungen neuer Funktionen auf den bestehenden Code.
+In diesem Projekt wurde das folgendermaßen gelebt: Die Testfälle gegen User-Stories (4.5.1) wurden priorisiert. Anschließend wurden 1-2 Testfälle ausgewählt zu jeder User-Story, welche nach einer Optimierung oder Änderung des dazugehörigen Feature jedes Mal mit ausgeführten wurden. Das bedeutet zum Beispiel, dass zunächst die Funktion des Beitrags erstellen möglich war. Anschließend wurde die Funktion des Gültigkeitsdatums hinzugefügt. Danach wurde überprüft, dass alle vorherigen Funktionen weiterhin die Defintion of Done erfüllen und alles weiterhin fehlerfrei funktioniert.
+Eine vollständige Wiederholung aller Testfälle wurde im letzten Sprint vor dem Release vorgenommen (Release Test), um sicherzustellen, dass bei der Übergabe zum Kunden alles fehlerfrei funktioniert.
+
+
+\subsection{Feld-Test}
+\label{sub:UmsetzungTestFeld}
+
+Ein Feldtest ist die Erprobung einer produktionsfähigen Vorabversion einer Software durch eine repräsentative Anzahl an von Anwendern. Das Ziel eines Feldtests ist das Erkennen von noch nicht komplett spezifizierten Einsatzumgebungen und Bedingungen sowie dem Prüfen auf Akzeptanz des Marktes.
+Dazu wurde eine bereite Anzahl an potentiellem Nutzer ins Visier genommen. Da die Plattform Generationenübergreifend sein soll, wurden daher Testpersonen mit unterschiedlichem Alter, unterschiedlichem Background Wissen und unterschiedlichen Interessen ausgewählt.
+Für die Durchführung des Feld-Testes wurde eine Guideline erstellt und der Tester hat sich zusammen mit der Testperson an einen Rechner gesetzt und die aktuelle Plattform ausprobiert. Der Tester hat dabei die Testperson nur gebeten gewisse Aktionen durchzuführen und hat die Testperson gebeten, dabei unentwegt Rückmeldung darüber zu geben, welche Gefühle er dabei empfindet und wie ihm die bestehenden Features gefallen. Abgeschlossen wurde der Test dadurch, dass die Personen ein kurzes Feedback geben sollten.
+Der Test wurde insgesamt drei Mal durchgeführt mit jeweils 6 Personen, und das Ergebnis wurde anschließend im Team besprochen, wo etwaige Änderungen vorgenommen werden müssen beziehungsweise welche Features eventuell neu priorisiert werden müssen.
+
+Teilnehmer:
+\begin{itemize}
+    \item P. Vogler (Alter: 53, weiblich, Bankkauffrau)
+    \item N. Vogler (Alter: 55, männlich, Berufsschulehrer)
+    \item D. Bandac (Alter: 26, männlich, Requirements-Ingenieur)
+    \item D. Blana (Alter: 27, weiblich, Zahntechnikerin)
+    \item T. Scholl (Alter: 36, männlich, System-Tester)
+    \item K. Warmuth (Alter: 42, weiblich, Büro-Angestellte)
+  \end{itemize}
+
+  \subsection{Exploratives-Testen}
+\label{sub:UmsetzungTestExplorativ}
+
+Bei dieser Methode stehen nicht Testpläne im Mittelpunkt, sondern die Tester „entdecken“ die Anwendung schrittweise selbst, indem sie diese benutzen. Parallel dazu erstellen die ersten Testfälle und optimieren sie iterativ in dem Maße, in dem mehr über die Anwendung gelernt wird. Gefragt sind hierbei vor allen Dingen Intelligenz, Intuition und Erfahrung. Im Gegensatz zu den klassischen Testmethoden – die dadurch keineswegs obsolet werden – fokussiert sich der explorative Ansatz auf die grundsätzliche Benutzbarkeit der Anwendung. Denn Schwächen in der Darstellung, umständliche Arbeitsabläufe oder logische Brüche, werden oft erst im Nutzererlebnis offenbar.
+Hierbei spezialisierte vor allem Ende des jeden Sprints fokussiert. Dabei wurde überprüft, welche neuen Funktionen implementiert wurden. Anschließend wurden diese in den Fokus genommen und mit den bisherigen Funktionen zusammen ausprobiert. Dabei werden auch bereits bestehende Testfälle optimiert und neue Testfälle hinzugefügt (s. Dazu 4.5.1). Hinzu kommt, dass dabei auch die Usability der einzelnen Funktionen überprüft wurden um die Qualität unserer Plattform aus der Sicht des Endbenutzers zu bewerten.
+Bei Auffälligkeiten wurden im Weekly Meeting Rücksprache mit dem Team gehalten, um etwaige Änderungen am Design zu erörtern und in die Wireframes wenn nötig einzubinden.
+Bei Fehlern wurde ein Fehlerbericht erstellt (Bug-Bericht), und dem jeweiligen Entwickler in Jira zugewiesen.
