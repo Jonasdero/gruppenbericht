@@ -30,7 +30,6 @@
 \newcommand{\logo}{figures/TH-Nuernberg-RGB.png}
 \newcommand{\keywords}{}
 \newcommand{\publishDate}{15.04.2023}
-\input{new_commands}
 
 % custom head and foot
 \usepackage[automark]{scrlayer-scrpage}
@@ -207,7 +206,7 @@
   linktoc=all,
   % hidelinks Uncomment in Production build
 ]{hyperref}
-\usepackage[nonumberlist]{glossaries}
+\usepackage[nonumberlist, acronym]{glossaries}
 
 \usepackage{float}
 \restylefloat{table}
@@ -236,6 +235,7 @@
 \hfuzz=7.5pt
 
 \begin{document}
+\input{acronyms}
 
 \setcounter{secnumdepth}{3}  % numerate subsections
 \setcounter{tocdepth}{2}  % ...but don't include them in toc

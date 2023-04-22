@@ -1,63 +1,62 @@
-% \section{Visuelle Grundstrukturen}
+\label{sec:Grundstrukturen}
 
-Ein wichtiger Faktor für den Erfolg des Scrum-Teams ist es, dass jeder im Team das gleiche Verständnis über das zu entwickelnde Produkt hat. Die Sicherstellung dessen ist von hoher Bedeutung, um vermeidbaren Zeitfressern, wie lange Diskussionen, Missverständnisse, Nacharbeit und eine \ggf daraus hervorgehende Demotivation im Team entgegenzuwirken.
-Darüber hinaus entstehen durch eine Visualisierung des Produktes Ideen und Lösungsansätze für Abläufe und Features, die frühzeitig im Entwicklungsprozess angesprochen, diskutiert und eingearbeitet werden können, ohne einen bemerkbaren Mehraufwand zu generieren.
-Wireframes eignen sich für diese Aufgabe sehr gut, da sich diese schnell erstellen und abändern lassen und zugleich jedem Teammitglied einen ersten Entwurf des Produktes aufzeigen. Ein weiterer Vorteil besteht darin, dass bereits frühzeitig dem Kunden auf einfache Weise die ersten Designkonzepte vorgestellt werden können und dieser sein Feedback in einer frühen Entwicklungsphase mit einfließen lassen kann.
-
-Das Erstellen von Wireframes beinhaltet zugleich, sich frühzeitig mit dem Aufbau und der Konzeption der Website auseinanderzusetzen. Aus diesem Grunde wird im weiteren Verlauf auch auf die Themen Seitenstruktur und Layout eingegangen.
+Im Verlauf der konzeptionellen und inhaltlichen Ausarbeitung von \acrshort{dht} wurde deutlich, dass es einen zunehmenden Bedarf an visuellen Darstellungen der Konzepte gibt. Insbesondere bei der Gestaltung und Entwicklung von Benutzerschnittstellen gab es Defizite, die durch die angewandten Methoden nicht ausgeglichen werden konnten. Eine Lösung hierfür waren Wireframes, die in der Softwareentwicklung sehr beliebt sind. \\
+Wireframes sind besonders geeignet, um Weboberflächen zu visualisieren, da sie schnell erstellt und angepasst werden können und jedem ein gutes Verständnis vermitteln können. Ein weiterer Vorteil besteht darin, dass Kunden zeitnah die ersten Designkonzepte präsentiert werden können und ihr Feedback in frühen Entwicklungsphasen einfließen kann. \\
+Die Erstellung von Wireframes erfordert gleichzeitig eine Auseinandersetzung mit dem Aufbau und der Konzeption der Website. Folglich werden in diesem Kapitel zunächst die Grundlagen für Seitenstrukturen (\ref{sec:seitenstruktur}) und Layouts (\ref{sec:layout}) erarbeitet, bevor Wireframes (\ref{sec:wireframes}) näher eingegangen werden.
 
 \subsection{Grundlagen Seitenstruktur}
+\label{sec:seitenstruktur}
 
-Die Seitenstruktur einer Website beschreibt die Art und Weise, wie die Inhalte einer Anwendung präsentiert, organisiert und verlinkt sind.
+Bei der Erstellung einer Website ist es daher wichtig, die Seitenstruktur im Vorfeld zu planen und zu entwerfen. Eine klare Seitenstruktur ermöglicht es den Nutzern, sich auf der Website zurechtzufinden und schnell die gewünschten Informationen zu finden.
 
-Die darzustellenden Informationen müssen daher nach Inhalt aufgeteilt und thematisch auf einzelnen Seiten organisiert werden. Jede Seite der Website besitzt somit ein klares Ziel, worüber sie informieren soll. Die einzelnen Seiten unterscheiden sich daher \bzgl ihres Ziels und Inhaltes. Jedoch existieren auf jeder Website eine Reihe von sogenannten Kernseiten, die oft aufzufinden sind. Klassische Seitentypen sind \bspw Startseite, Kontaktseite, Landingpage, Content- sowie Detailseiten.
-
-Die Startseite, auch als Homepage bekannt, beschreibt die Seite, die den Startpunkt \bzw Ursprung einer Website darstellt. Von ihr aus kann über Verlinkungen zu allen Unterseiten navigiert werden.
-Die Landingpage hingegen ist die erste Seite, die ein User wahrnimmt, wenn er von einem externen Link auf die Website geführt wird und eine Session beginnt. Die Landingpage wird oft für das Marketing hergezogen, um den Besucher für den Dienst zu begeistern und weitere Schritte anzuregen.
-Die Contentseite hingegen gibt einen Überblick über die angebotenen Inhalte und verweist auf die zugehörige Detailseite, auf der die Inhalte detailliert aufgeführt sind.
-
-Wie aus der Beschreibung der Seitentypen hervorgeht, werden die einzelnen Seiten zu unterschiedlichen Zeitpunkten oder in einer bestimmten Reihenfolge aufgerufen. Dies lässt sich auch als eine Art Hierarchie verstehen, die die einzelnen Seiten zueinander haben. Ob es sich hierbei um eine flache oder tiefe Hierarchie handelt, ist von der Navigationsstruktur abhängig. Allgemein werden häufig, wegen der besseren Orientierung, flache Seitenhierarchien empfohlen.
-
-\begin{figure}
+\begin{figure}[!htb]
     \centering
-    \includegraphics[width=\textwidth]{figures/jan/Wire_Hierarchie.png}
+    \includegraphics[scale=0.55]{figures/jan/Wire_Hierarchie.png}
     \caption[Seitenstruktur einer Website]{Seitenstruktur einer Website}
-    \label{fig:image}
+    \label{fig:seitenstruktur}
 \end{figure}
 
-Die einzelnen Seiten einer Website unterscheiden sich jedoch \idR nicht vollständig voneinander. Sie folgen alle einem gleichbleibenden Aufbau. Dieses Grundgerüst einer Seite besteht oftmals aus einer Kopf- und Fußleiste und einem Inhaltsbereich. Die Kopf- und Fußleiste ist üblicherweise auf allen Seiten gleich ausgestaltet.
+Abbildung \ref{fig:seitenstruktur} zeigt beispielhaft die Seitenstruktur einer Website, bei der die Informationen thematisch aufgeteilt und auf einzelnen Seiten organisiert sind. Jede Seite hat ein klares Ziel und informiert über bestimmte Inhalte. Darüber hinaus gibt es auf jeder Website eine Reihe von Kernseiten, die oft zu finden sind, wie beispielsweise die Startseite, Kontaktseite, Landingpage, Content- sowie Detailseiten.
 
-\begin{figure}
+Die Startseite einer Website, auch als Homepage bekannt, bildet den Startpunkt und die zentrale Anlaufstelle für den Nutzer. Von hier aus können alle Unterseiten über entsprechende Verlinkungen erreicht werden. \\
+Die Landingpage ist die erste Seite, die ein Nutzer sieht, wenn er über einen externen Link auf die Website gelangt und eine Sitzung startet. Sie wird häufig im Rahmen von Marketingmaßnahmen eingesetzt, um den Nutzer von den Angeboten der Website zu überzeugen und zu weiteren Schritten zu animieren. \\
+Die Contentseite bietet einen Überblick über die verfügbaren Inhalte und verlinkt auf die zugehörige Detailseite, auf der die Inhalte ausführlich dargestellt werden. Es ist wichtig, dass die Contentseite übersichtlich gestaltet ist und dem Nutzer einen schnellen Zugang zu den relevanten Informationen bietet.
+
+Wie aus der Beschreibung der verschiedenen Seitentypen hervorgeht, werden diese in unterschiedlicher Reihenfolge oder zu unterschiedlichen Zeitpunkten aufgerufen. Dies führt zu einer gewissen Hierarchie zwischen den Seiten. Ob diese Hierarchie flach oder tief ist, hängt von der Navigationsstruktur ab. Im Allgemeinen wird empfohlen, flache Seitenhierarchien zu verwenden, um eine bessere Orientierung für den Nutzer zu gewährleisten. \\
+Die einzelnen Seiten einer Website unterscheiden sich in der Regel nicht vollständig voneinander, sondern folgen einem gleichbleibenden Aufbau. Dieses Grundgerüst einer Seite besteht oft aus einer Kopf- und Fußleiste sowie einem Inhaltsbereich (siehe Abb. \ref{fig:Grundgeruest}). Die Kopf- und Fußleiste sind üblicherweise auf allen Seiten gleich gestaltet, um eine konsistente Nutzererfahrung zu gewährleisten.
+
+Der Kopfbereich einer Webseite ist ein wichtiger Bestandteil des Layouts und befindet sich im obersten Teil der Seite. Er umfasst üblicherweise das Logo, die Haupt- und Metanavigation und wird oft auch als Header bezeichnet. \\
+Das Logo dient als visuelles Erkennungsmerkmal und soll das Unternehmen oder die Marke repräsentieren. Die Hauptnavigation ermöglicht eine strukturierte Übersicht über die verfügbaren Inhalte und ist entscheidend für eine gute Navigation auf der Webseite. Daher wird sie oft auffällig im oberen Bereich platziert. Die Metanavigation bietet ergänzende Serviceinhalte wie zum Beispiel Account-Einstellungen und ist getrennt von den Hauptthemen aufgeführt. \\
+
+\begin{figure}[!htb]
     \centering
-    \includegraphics[]{figures/jan/Wire_Areas.png}
-    \caption[Elemente einer Website]{Elemente einer Website}
-    \label{fig:image}
+    \includegraphics[scale=0.8]{figures/jan/Wire_Areas.png}
+    \caption[Grundgerüst einer Website]{Grundgerüst einer Website}
+    \label{fig:Grundgeruest}
 \end{figure}
 
-Der Kopfbereich einer Seite befindet sich im obersten Teil der Seite und umfasst das Logo, die Haupt- und Metanavigation. Der Kopfbereich wird häufig auch als Header bezeichnet.
-Das Logo im Kopfbereich stellt ein wichtiges Erkennungs- und Differenzierungsmerkmal der Website dar und zielt auf das Erzeugen von Assoziationen mit der Website ab. Die Hauptnavigation gibt eine Übersicht über die verfügbaren Inhalte und stellt diese strukturiert dar. Die Hauptnavigation erweist sich für die Navigation als wichtigstes Element und wird häufig auffällig im oberen Bereich platziert. Eine weitere Navigationsleiste ist die Metanavigation, welche ergänzende Serviceinhalte wie \zB Accounteinstellungen der Seite verfügbar macht. Die Inhalte dieser Leiste haben keinen Bezug zu den Hauptthemen und werden daher gesondert aufgeführt.
-
-Der Inhaltsbereich ist direkt unter dem Kopfbereich angeordnet und umfasst die zu vermittelnden Inhalte. Der Inhaltsbereich weist je nach Bedarf entweder nur die reinen Inhalte auf oder \ggf noch eine Subnavigation, die meist links angeordnet ist, sowie eine Seitenleiste (\engl Sidebar) für weiterführende Inhalte, die auf der rechten Seite untergebracht werden. Die zentralen Inhalte werden zwischen den Leisten, im sogenannten Inhaltsbereich, und meist nach Wichtigkeit absteigend sortiert aufgelistet.
-
-Die untere Begrenzung der Internetseite bildet die Fußleiste (\engl Footer). Die Fußleiste beinhaltet meist Basisinformationen der Seite, ergänzende Inhalte oder auch \ggf weitere Navigationsmöglichkeiten.
-
-Umschlossen werden die Seitenbereiche von einem umgebenden Block, der die ungenutzte Fläche der Website darstellt.
+Der Inhaltsbereich befindet sich direkt unter dem Kopfbereich und enthält die zu vermittelnden Inhalte. Je nach Bedarf kann er entweder nur die reinen Inhalte oder auch eine Subnavigation auf der linken Seite sowie eine Seitenleiste für weiterführende Inhalte auf der rechten Seite enthalten. Die zentralen Inhalte werden zwischen den Leisten im Inhaltsbereich platziert und in der Regel nach Wichtigkeit absteigend sortiert dargestellt. \\
+Die untere Begrenzung einer Webseite wird üblicherweise durch die Fußleiste gebildet. Hier finden sich häufig Basisinformationen zur Seite, ergänzende Inhalte sowie gegebenenfalls weitere Navigationsmöglichkeiten. \\
+Die Seitenbereiche werden dabei von einem umgebenden Block eingerahmt, der die ungenutzte Fläche der Website darstellt.
 
 \subsection{Grundlagen Layout}
+\label{sec:layout}
+
 \subsection{Rastersystem}
 
-Für die Überführung der ersten Skizzen in ein stimmiges Layout eignet sich die zur Hilfenahme eines Rastersystems. Ein Rastersystem stellt ein Netz mit Zeilen und Spalten dar, an welchen die Inhalte ausgerichtet und letztlich im Rastersystem platziert werden. Der Vorteil besteht darin, dass die Inhaltselemente und Einzelseiten in eine gleiche Struktur gebracht werden und die Seiten zunehmend abgestimmter und einheitlicher wirken. Das Raster wird lediglich für die Gestaltung herangezogen und sollte möglichst unauffällig oder dezent für den Endnutzer wirken,
+Um die ersten Skizzen in ein stimmiges Layout zu überführen, kann ein Rastersystem verwendet werden. Dabei handelt es sich um ein Netz mit Zeilen und Spalten, an denen die Inhalte ausgerichtet und schließlich im Rastersystem (siehe Abbildung \ref{fig:gridSystem}) platziert werden. Der Vorteil besteht darin, dass die Inhaltselemente und Einzelseiten in eine einheitliche Struktur gebracht werden und die Seiten dadurch zunehmend abgestimmter und harmonischer wirken. Das Raster wird lediglich für die Gestaltung verwendet und sollte für den Endnutzer möglichst unauffällig oder dezent wirken.
 
-Die Ausgangsbasis eines Rastersystems ist zu meist eine Leinwand mit definierten Abmessungen. Die Fläche wird in Spalten (\engl columns) unterteilt und \ggf wird zusätzlich noch zwischen den Spalten ein gleichbleibender Freiraum (\engl gutter) angelegt. Je höher die Spaltenanzahl gewählt wird, desto größer wird der gestalterische Spielraum, wobei der Nutzen des Rasters ab einer gewissen Anzahl zunehmend verschwindet.
-In einem weiteren Schritt kann eine horizontale Unterteilung vorgenommen werden. Als Grundlage wird hier das sogenannte Baseline Grid verwendet, welches sich aus der Schriftgröße und dem Zeilenabstand zusammensetzt.
-Die einzelnen Spalten und Zeilen können des Weiteren noch in Bereiche zusammengefasst werden, um ein modulares Rastersystem zu erstellen.
-Die Website-Inhalte werden im Nachgang den Bereich zugeordnet und am Raster ausgerichtet.
+Die Basis eines Rastersystems ist in der Regel eine Leinwand mit festen Abmessungen. Diese Fläche wird in Spalten aufgeteilt und gegebenenfalls mit gleichbleibendem Freiraum zwischen den Spalten versehen. Je mehr Spalten man wählt, desto größer wird der gestalterische Spielraum, aber auch der Nutzen des Rastersystems nimmt ab einer gewissen Spaltenanzahl ab.
+Im nächsten Schritt kann eine horizontale Unterteilung vorgenommen werden, wobei das sogenannte Baseline Grid als Grundlage dient. Das Baseline Grid setzt sich aus der Schriftgröße und dem Zeilenabstand zusammen.
+Die einzelnen Spalten und Zeilen können weiterhin in Bereiche unterteilt werden, um ein modulares Rastersystem zu schaffen.
+Abschließend werden die Inhalte der Website den entsprechenden Bereichen zugeordnet und am Raster ausgerichtet. Das Ziel ist, ein stimmiges Layout zu erreichen und den visuellen Eindruck der Website zu verbessern.
 
-\begin{figure}
+
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/jan/Wire_Gridsystem.jpeg}
     \caption[Beispiel eines Rastersystems]{Beispiel eines Rastersystems}
-    \label{fig:image}
+    \label{fig:gridSystem}
 \end{figure}
 
 % ![Gridsystem](res/Wire_Gridsystem.jpeg)
@@ -65,14 +64,13 @@ Die Website-Inhalte werden im Nachgang den Bereich zugeordnet und am Raster ausg
 
 \subsubsection*{Layouttypen}
 
-Als es nur eine kleine Vielfalt an Endgeräten mit verschiedenen Auflösungen gab, wurde oft mit einem statischen Layout gearbeitet, welches für eine weit verbreitete Auflösung optimiert war. Heute lässt sich dieser Ansatz wegen der unüberschaubaren Menge an Geräten, die sich zudem stark in ihren Auflösungen unterscheiden, kaum noch heranziehen. Insbesondere schwer ist die Findung einer passenden Auflösung, die für einen Großteil der Geräte als ansprechend erscheint.
-Heutzutage geht man hingegen nicht mehr von einer festen Breite bei der Layouterstellung aus, sondern erstellt Layouts, die sich je nach Auflösung individuell dem Gerät anpassen.
+Früher wurde aufgrund der begrenzten Anzahl von Endgeräten mit unterschiedlichen Auflösungen oft ein statisches Layout verwendet, das für eine gängige Auflösung optimiert war. Heute ist dieser Ansatz aufgrund der Vielzahl an Geräten mit sehr unterschiedlichen Auflösungen nicht mehr praktikabel. Es ist besonders schwierig, eine passende Auflösung zu finden, die für die meisten Geräte geeignet ist.
+Deshalb geht man heutzutage nicht mehr von einer festen Breite bei der Layouterstellung aus, sondern erstellt Layouts, die sich individuell an die Auflösung des Geräts anpassen.
 
-Während dieser Entwicklung sind verschiedene Layouttypen entstanden, die je nach Anwendungsfall zurate gezogen werden.
+Das fixe Layout ist ein Layouttyp, der eine feste Breite mit festen Pixelwerten definiert. Wenn die Auflösung des Bildschirms zum Layout passt, werden alle Inhalte korrekt dargestellt. Wenn jedoch die Auflösung zu hoch ist, wird der umgebende Block der Seite unnötig groß und es entsteht viel ungenutzter Platz. Wenn die Auflösung zu niedrig ist, erscheinen horizontale Scrollbalken und die Inhalte werden abgeschnitten oder unvollständig angezeigt.
 
-Das fixe Layout beschreibt einen Layouttyp, der mit festen Pixelwerten eine fixe Breite definiert. Bei einer passenden Auflösung werden alle Inhalte korrekt angezeigt. Je größer hingegen die Auflösung wird, desto größer wird der umgebende Block der Seite und viel ungenutzter Platz entsteht. Bei einer zu kleinen Auflösung tauchen horizontale Scrollbalken auf und die Inhalte erscheinen abgeschnitten \bzw werden nur noch unvollständig angezeigt.
 
-\begin{figure}
+\begin{figure}[!htb]
     \centering
     \includegraphics[scale=1.2]{figures/jan/Wire_Fixes-Layout.png}
     \hspace{0.05\textwidth}
@@ -81,43 +79,44 @@ Das fixe Layout beschreibt einen Layouttyp, der mit festen Pixelwerten eine fixe
     \label{fig:image}
 \end{figure}
 
-Das Gegenstück zum fixen Layout stellt das flexible Layout dar. Dieses passt sich allen Veränderungen unmittelbar an und behält dadurch zu jeder Zeit alle vorgegebenen Größenverhältnisse. Definiert wird es im Gegensatz zu den festen Pixelwerten mit relativen prozentualen Werten, wodurch es sich unterschiedlichen Varianten einer Website leicht anpassen kann. Der reine Layouttyp kommt jedoch eher selten zum Einsatz. Vielmehr lässt sich häufig eine Mischform aus fixem und flexiblem Layout vorfinden.
+Das flexible Layout bildet das Gegenstück zum fixen Layout und zeichnet sich durch seine Fähigkeit aus, sich unmittelbar allen Veränderungen anzupassen und dabei alle vorgegebenen Größenverhältnisse beizubehalten. Im Gegensatz zum fixen Layout wird es mit relativen prozentualen Werten definiert, wodurch es sich leicht verschiedenen Varianten einer Website anpassen kann. Obwohl der reine Layouttyp selten zum Einsatz kommt, findet man häufig eine Mischform aus fixem und flexiblem Layout.
 
-Eine weitere Layoutform ist das elastische Layout. Das elastische Layout verfolgt den Ansatz, dass sich die Inhalte einer Seite anpassen. Dieser Layouttyp ist besonders für Inhalte geeignet, die die vollständige Bildschirmbreite ausfüllen, was \bspw bei einer Produktpräsentation mit großformatigen Bildern und Videos der Fall ist. Die Inhalte müssen hierfür in der Lage sein sich automatisch flexibel anzupassen. Daher ist es für diese Form von Vorteil, wenn es eher wenige Inhalte zum Vorstellen gibt.
+Eine weitere Layoutform ist das elastische Layout, bei dem sich die Inhalte einer Seite flexibel anpassen können. Dieser Layouttyp eignet sich besonders für Inhalte, die die volle Breite des Bildschirms ausfüllen, wie z.B. bei einer Produktpräsentation mit großformatigen Bildern und Videos. Es ist von Vorteil, wenn es nicht zu viele Inhalte gibt, da sich diese automatisch anpassen müssen, um optimal dargestellt zu werden.
 
-Auf Basis des flexiblen Layouts setzt das responsive Layout auf und erweitert die Möglichkeiten situationsgerecht ein passendes Layout für das Endgerät zur Verfügung zu stellen. Das responsive Layout besitzt als Erweiterung sogenannte Media-Queries, welche es ermöglichen beim Über- oder Unterschreiten fester Schwellwerte eine Veränderung der Ansicht zu starten und die Inhalte \bspw neu anzuordnen.
+Das flexible Layout bildet die Grundlage für das responsive Layout, welches die Möglichkeiten erweitert, ein passendes Layout für jedes Endgerät situationsgerecht bereitzustellen. Als Erweiterung des flexiblen Layouts verfügt das responsive Layout über sogenannte Media-Queries, die es ermöglichen, bei Überschreiten oder Unterschreiten bestimmter Schwellenwerte eine Anpassung der Ansicht zu initiieren und die Inhalte beispielsweise neu anzuordnen.
 
 \subsection{Grundlagen Wireframes}
+\label{sec:wireframes}
 
 \subsubsection{Definition/ Inhalte}
 
-Als Wireframe wird die schematische Darstellung von Inhalten und Elementen der Seitenoberfläche verstanden. Wireframes dienen insbesondere zur Konzeptionierung in der Planungsphase, um einerseits einen groben Entwurf für die Verteilung, Anordnung und Gestaltung von den Seitenelementen zu erhalten sowie zum anderen die Beziehungen zwischen den Seiten herzustellen.
-Die Darstellung des Seitenlayouts ist zumeist eine skizzenhafte, in schwarz-weiß/ grau gehaltene Abbildung. Die einzelnen Bestandteile der Seite werden dabei durch einfache geometrische Formen verdeutlicht. Das Darstellen von Design, Farben, Schrift und Bilder ist kein Bestandteil der Methode. Ein fertiges Wireframe gibt dem Betrachter final Aufschluss über die Platzierung der Informationsinhalte, die Struktur und Navigation der Seite und die Interaktionselemente (Interface), mit welchen der Nutzer interagiert.
-Die ausgearbeiteten Wireframes stellen weiter fort die Grundlage für die visuelle und funktionale Detaillierung des Produktes dar. Anschließende Schritte können \ua das Erstellen von Mockups oder Prototypen sein.
+Wireframes sind schematische Darstellungen von Inhalten und Elementen der Seitenoberfläche und dienen der Konzeptionierung in der Planungsphase. Sie ermöglichen einen groben Entwurf für die Verteilung, Anordnung und Gestaltung der Seitenelemente sowie das Herstellen von Beziehungen zwischen den Seiten.
+Typischerweise sind Wireframes skizzenhafte, schwarz-weiße oder graue Abbildungen, bei denen die einzelnen Bestandteile der Seite durch einfache geometrische Formen verdeutlicht werden. Design, Farben, Schrift und Bilder sind hierbei nicht Teil der Methode. Das fertige Wireframe gibt einen Überblick über die Platzierung der Informationsinhalte, die Struktur und Navigation der Seite sowie die Interaktionselemente, mit denen der Nutzer interagiert.
+Ausgearbeitete Wireframes bilden die Grundlage für die visuelle und funktionale Detaillierung des Produkts. Anschließende Schritte können beispielsweise das Erstellen von Mockups oder Prototypen sein, welche als weitere visuelle Methoden in Kapitel \ref{sec:Abgrenzung} erläutert werden.
+
 
 \subsubsection{Arten}
 
-Wireframes werden allgemein in Low-Fidelity- und High-Fidelity-Wireframes unterschieden.
-Low-Fidelity-Wireframes (LFW) stellen das klassische Verständnis von Wireframes dar, bei denen der Fokus allein auf dem funktionalen Design liegt. Die Seitenschemas werden mit einfachsten Formen und ohne konkrete Inhalte erstellt.
-Die High-Fidelity-Wireframes (HFW) hingegen stellen die nächste Entwicklungsstufe für die Ausarbeitung des Designs dar. In ihr kommen zunehmend mehr und mehr Designkomponenten wie Farben, Typografie, Abstände, Icons, Text, Bilder und Grafiken zum Einsatz. In den Seiten werden zunehmend auch mehr reale Textlängen und Größenverhältnisse der Elemente und Inhalte mit einbezogen.
+Wireframes werden allgemein in Low-Fidelity- und High-Fidelity-Wireframes unterschieden. Bei den \acrfull{lfw} liegt der Fokus allein auf dem funktionalen Design. Die Seitenschemas werden mit einfachen Formen und ohne konkrete Inhalte erstellt. Die \acrfull{hfw} stellen hingegen die nächste Entwicklungsstufe für die Ausarbeitung des Designs dar. Hier kommen zunehmend mehr Designkomponenten wie Farben, Typographie, Abstände, Icons, Text, Bilder und Grafiken zum Einsatz. Dabei werden auch reale Textlängen und Größenverhältnisse der Elemente und Inhalte berücksichtigt.
 
-\begin{figure}
+\begin{figure}[!htb]
     \centering
     % [//]: # (BILD Beispiel LFW und HFW)
     % https://mentormate.com/blog/low-fidelity-wireframes-vs-high-fidelity-wireframes/
     % https://www.resolutesoftware.com/news/ux-wireframes/
     \includegraphics[scale=1]{figures/jan/Wire_Fixes-LFWvsHFW2.png}
-    \caption[Beispielhafte Darstellung von LFW und HFW]{Beispielhafte Darstellung von LFW und HFW}
+    \caption[Beispielhafte Darstellung von \acrshort{lfw} und \acrshort{hfw}]{Beispielhafte Darstellung von \acrshort{lfw}  und \acrshort{hfw}}
     \label{fig:image}
 \end{figure}
 
 \subsubsection{Abgrenzung}
+\label{sec:Abgrenzung}
 
-Häufig werden im Zusammenhang mit Wireframes noch weitere visuelle Methoden in Verbindung gebracht. Weit verbreitet sind hier insbesondere Mockups und Prototypen. Diese Methoden verwenden jeweils Wireframes als Grundlage und zielen auf die zunehmende reale Veranschaulichung des zukünftigen Produktes.
+Wireframes werden oft in Verbindung mit anderen visuellen Methoden genutzt, wie zum Beispiel Mockups und Prototypen. Diese Methoden bauen auf Wireframes auf und haben zum Ziel, das zukünftige Produkt realitätsnah darzustellen.
 
-Unter Mockups wird das Nachbilden eines Produktes oder auch ein maßstabsgerechtes Modell verstanden. Im Vordergrund der Methode steht das visuell-interaktive Design. Hierzu wird das Konzept der Wireframes übernommen und mit den Elementen der Benutzeroberflächen erweitert. Funktionale oder animierte Elemente sind nicht Bestandteil der Methode und werden nicht für einen Mockup aufgegriffen. Mockups werden im natürlichen Umfeld des Produktes dargestellt - zum Beispiel auf einem Gerätebildschirm. Das Ziel besteht darin das Produkt so echt wie möglich visuell nachzubilden, um dem Kunden ein reales Gefühl über die Erscheinung seines Produktes zu vermitteln.
+Mockups sind Nachbildungen oder maßstabsgerechte Modelle des Produkts und legen den Fokus auf das visuell-interaktive Design. Dabei werden die Wireframes um Elemente der Benutzeroberfläche ergänzt, jedoch sind keine funktionalen oder animierten Elemente enthalten. Mockups werden oft in der natürlichen Umgebung des Produkts, z.B. auf einem Gerätebildschirm, dargestellt, um dem Kunden ein realitätsnahes Gefühl des Erscheinungsbilds zu vermitteln.
 
-% \begin{figure}
+% \begin{figure}[!htb]
 %     \centering
 %     % [//]: # (Bild Mockup in Bildschirm)
 %     \includegraphics[scale=0.25]{image.png}
@@ -125,26 +124,25 @@ Unter Mockups wird das Nachbilden eines Produktes oder auch ein maßstabsgerecht
 %     \label{fig:image}
 % \end{figure}
 
-Als Prototyp wird ein vereinfachtes Versuchsmodell des geplanten Produktes verstanden. Der Prototyp baut auf die Ergebnisse eines Mockups auf und erweitert dieses mit funktionalen Elementen, um die Interaktion eines Users mit dem Dienst simulieren zu können.
-Ein klassisches Beispiel für einen Prototypen ist der Klick-Dummy. Ein Klick-Dummy ist ein teilweise interaktionsfähiges Demo einer Bedienoberfläche, welches alle relevanten Merkmale eines Produktes widerspiegelt und \ua zur Vorstellung oder für Testläufe genutzt werden kann.
+Ein Prototyp ist ein vereinfachtes Versuchsmodell des geplanten Produkts, das auf den Ergebnissen eines Mockups aufbaut. Er wird um funktionale Elemente erweitert, um die Interaktion eines Benutzers mit dem Dienst simulieren zu können.
+Ein Beispiel für einen klassischen Prototypen ist ein Klick-Dummy. Dieser bietet eine teilweise interaktive Demo einer Bedienoberfläche, die alle relevanten Merkmale des Produkts widerspiegelt. Er kann für Vorstellungen oder Testläufe genutzt werden.
 
-\begin{figure}
+
+\begin{figure}[!htb]
     \centering
-    % https://www.appschopper.com/blog/quick-guide-on-mobile-app-wireframe-vs-mockup-vs-prototype/
     % [//]: # (BILD Reihenfolge LFW - HFW - MockUp - Prototyp)
     \includegraphics[scale=2]{figures/jan/Wire_Fixes-Wire-prototyp.png}
-    \caption[Interationsschritte an einem Beispiel: Wireframe - Mockup - Prototyp]{Interationsschritte an einem Beispiel: Wireframe - Mockup - Prototyp}
+    \caption[Interationsschritte an einem Beispiel: Wireframe - Mockup - Prototyp]{Interationsschritte: Wireframe - Mockup - Prototyp}
     \label{fig:image}
 \end{figure}
 
 \subsection{Anwendung}
 \subsubsection{Integration}
 
-Die Wireframes wurden innerhalb des Projektverlaufes kontinuierlich für die Ausgestaltung und Kommunikation der User-Stories während des Backlog Refinement verwendet. Hierfür wurden in einer frühen Phase die jeweiligen User-Stories vom PO erläutert und ein erster Wireframe-Entwurf konzipiert. Erkenntnisse, die bereits während der Konzipierung entstanden, wurden an den PO übermittelt und nach Absprache noch während des Sprints direkt in die Wireframes aufgenommen.
-Im Refinement dienten sie einerseits dem PO zur Vorstellung und Erklärung der User-Stories und andererseits zur Präzisierung und Detaillierung der Story im Team.
-Die daraus neu gewonnenen Informationen wurden vom PO ins Backlog aufgenommen und erneut zum nächsten Refinement in die Wireframes eingearbeitet.
+Die Wireframes wurden kontinuierlich im Projektverlauf genutzt, um die Ausgestaltung und Kommunikation der User-Stories während des Backlog Refinement zu unterstützen. Zunächst wurden in einer frühen Phase die jeweiligen User-Stories vom Product Owner erläutert und ein erster Entwurf der Wireframes erstellt. Erkenntnisse, die während der Konzeptionierung entstanden sind, wurden mit dem Product Owner besprochen und direkt in den Wireframes umgesetzt.
+Während des Refinement-Prozesses dienten die Wireframes einerseits dem Product Owner zur Vorstellung und Erklärung der User-Stories und andererseits zur Präzisierung und Detaillierung der Story im Team. Die daraus gewonnenen Informationen wurden vom Product Owner in das Backlog aufgenommen und erneut in die Wireframes integriert, um sie im nächsten Refinement-Prozess zu berücksichtigen.
 
-% \begin{figure}
+% \begin{figure}[!htb]
 %     \centering
 %     % [//]: # (BILD Ablauf: Refinement 0 - 1 - 2 - 3, Feature A, B, C, Iteratives Vorgehen)
 %     \includegraphics[scale=0.25]{image.png}
@@ -152,40 +150,42 @@ Die daraus neu gewonnenen Informationen wurden vom PO ins Backlog aufgenommen un
 %     \label{fig:image}
 % \end{figure}
 
-Neben der Definition und Veranschaulichung der jeweiligen Features wurden die Wireframes auch im Entwicklungsprozess herangezogen. In diesem wurden sie als gestalterischer Entwurf berücksichtigt und so weit wie es dem Entwickler möglich war, implementiert.
+Die Wireframes wurden nicht nur genutzt, um die Features zu definieren und zu veranschaulichen, sondern auch während des Entwicklungsprozesses. Hier dienten sie als gestalterische Grundlage und wurden soweit wie möglich vom Entwickler implementiert.
 
-\subsubsection{Auswahl Tool}
+\subsubsection{Toolauswahl}
 
-Für die Erstellung von Wireframes stehen eine Vielzahl von verschiedenen Softwarelösungen zur Verfügung. Grundsätzlich lassen sich diese in desktop- und webbasierte Anwendungen unterscheiden. Für die Erstellung der Wireframes war es essenziell, dass diese leicht erstellt und angepasst werden können, \ggf auch paralleles Arbeiten möglich ist und dass das Teilen der aktuellen Entwürfe ohne zusätzlichen Aufwand geschieht. Anhand der Basisanforderungen konzentrierte sich die Auswahl zunehmend auf rein webbasierte Lösungen. Als Anbieter kristallisierte sich im weiteren Rechercheverlauf zunehmend Figma als ein passender Dienst heraus.
+Es gibt eine Vielzahl von Softwarelösungen, die für die Erstellung von Wireframes genutzt werden können. Diese lassen sich grob in desktop- und webbasierte Anwendungen unterteilen. Für uns war es bei der Wahl der Softwarelösung entscheidend, dass die Wireframes einfach erstellt und angepasst werden können, dass ein paralleles Arbeiten möglich ist und dass die aktuellen Entwürfe ohne zusätzlichen Aufwand geteilt werden können. Aufgrund dieser Anforderungen haben wir uns auf webbasierte Lösungen konzentriert und sind bei unserer Recherche auf Figma\footnote{Siehe \url{https://www.figma.com/}} gestoßen, das sich als passender Dienst herausgestellt hat.
 
-\begin{figure}
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{figures/jan/Wire_Figma.png}
     \caption[Figmas-Arbeitsumgebung]{Figmas-Arbeitsumgebung}
     \label{fig:figma}
 \end{figure}
 
-Figma ist eine Onlineanwendung, die sich auf die Erstellung von Wireframes, Mocks und Prototypen spezialisiert und sich in diesem Bereich etabliert hat. Gerade durch die Etablierung des Dienstes lässt sich schließen, dass es als Werkzeug ausgereift ist und die Erstellung einfacher Wireframes durchgängig unterstützt.
-Für das Erstellen der Wireframes wurde sich auf die grundlegenden Funktionen von Figma beschränkt. Der verfolgte Ansatz während der Ausarbeitung mit Figma lag hierbei besonders auf der Beschränkung der wesentlichen Elemente, um die Kerninhalte der Features deutlich hervorzuheben. Eingesetzt wurden hierbei \ua zur Gestaltung die Elemente Rechtecke und Text sowie zur Orientierung und Ausrichtung der Inhaltselemente das Raster und die Gruppierfunktion.
+Figma hat sich als etablierte Onlineanwendung auf die Erstellung von Wireframes, Mockups und Prototypen spezialisiert. Als Werkzeug ist es ausgereift und unterstützt die Erstellung einfacher Wireframes durchgängig. Bei der Erstellung der Wireframes wurde sich auf die grundlegenden Funktionen von Figma beschränkt und besonders darauf geachtet, die wesentlichen Elemente zu betonen, um die Kerninhalte der Features hervorzuheben. Dazu wurden Rechtecke und Textelemente zur Gestaltung sowie Raster und Gruppierungs-Funktionen zur Orientierung und Ausrichtung der Inhaltselemente eingesetzt.
 
-\#\#\#\# Anforderungen an die GUI
+\subsubsection{Anforderungen an die Benutzerschnittstelle}
 
-Für die Ausarbeitung der Wireframes wurden vorab einige Anforderungen festgelegt, welche bei der Erstellung beachtet werden mussten. Die Anforderungen bezogen sich zum einen auf die Gestaltung der Oberfläche und zum anderen auf die technologiekonforme Gestaltung der Wireframes.
+Für die Erstellung der Wireframes wurden im Vorfeld bestimmte Anforderungen festgelegt, die bei der Gestaltung berücksichtigt werden mussten. Diese Anforderungen betrafen sowohl die Gestaltung der Oberfläche als auch die technologiekonforme Umsetzung der Wireframes.
 
-Eine wichtige Anforderung an die Plattform war es, die UI generationsübergreifend zu konzipieren. Aus diesem Ansatz heraus ließen sich die folgenden Ansprüche an die UI ableiten:
+Eine wichtige Anforderung war es, die Benutzerschnittstelle -- auf engl. \acrfull{ui} -- generationenübergreifend zu gestalten. Daraus ergaben sich folgende Anforderungen an die \acrshort{ui}:
 
-- Einfache und intuitive Seitengestaltung, um die Inhalte, den Funktionsumfang und die Bedienung schnell selbstständig erfassen zu können,
-- Reduzierung der Inhalte auf das Wesentliche, um Verwirrungen/ Ablenkungen zu vermeiden,
-- Flache Hierarchien, um direkte Zugriffe auf die gewünschten Inhalte zu ermöglichen.
+\begin{itemize}
+    \item Eine einfache und intuitive Seitengestaltung, um Funktionsumfang und Bedienung schnell selbstständig erfassen zu können.
+    \item Reduzierung der Inhalte auf das Wesentliche, um Verwirrungen und Ablenkungen zu vermeiden.
+    \item Flache Hierarchien, um direkte Zugriffe auf die gewünschten Inhalte zu ermöglichen.
+\end{itemize}
 
-Von der technologischen Seite her war es erforderlich, dass die erstellten Konzeptentwürfe sich auch mit den ausgewählten Web-Technologien umsetzen lassen. Die Entwickler sollten in die Lage versetzt werden die Entwürfe entweder mittels Eigenentwicklungen oder durch das Heranziehen von Bibliotheken umzusetzen, ohne auf größere Herausforderungen zu stoßen. Das Ziel war es darüber hinaus einen hohen Grad an Wiederverwendbarkeit der Komponenten zu erreichen.
+Um die Konzeptentwürfe erfolgreich umzusetzen, war es entscheidend, bei der Erstellung die verwendeten Webtechnologien zu berücksichtigen. So sollten die Umsetzungen der Entwürfe für die Entwickler ohne größere Schwierigkeiten erfolgen können. Ein weiteres Ziel bestand darin, einen hohen Grad an Wiederverwendbarkeit der Komponenten zu erreichen.
 
-\#\#\#\# Pages
+\subsubsection{Ausarbeitung der Seiten}
 
-Als geeigneter Wireframetyp wurde ein Hybrid aus LFW und HFW gewählt. Die erstellten Wireframes umfassten alle layouttypischen Bereiche wie Kopf-, Inhalts- und Fußbereich, deren Inhalte in Feldern vereinfacht symbolisiert wurden. Die einzelnen Felder beinhalteten Texte, Dummy-Blöcke \bspw für Bilder und Interaktionselemente (Buttons, Dialoge \usw).
-Die Wireframes wurden sehr schlicht in Graustufen gehalten und ohne die Berücksichtigung von Designelementen (Farbe, Typografie \usw) erstellt. Für die regelmäßige Erstellung und Anordnung der Komponenten hat sich nach einigen Entwürfen die Leinwandbreite von 1160 Pixel mit einem Raster von 27×37 Pixel als vorteilhaft ergeben.
+Als geeigneter Wireframetyp wurde ein Hybrid aus \acrshort{lfw} und \acrshort{hfw} gewählt. Die erstellten Wireframes umfassten alle typischen Layoutbereiche wie Kopf-, Inhalts- und Fußbereich, deren Inhalte in Feldern vereinfacht symbolisiert wurden. Die einzelnen Felder beinhalteten Texte, Dummy-Blöcke wie beispielsweise für Bilder sowie die zugehörigen Interaktionselemente wie Buttons und Dialoge.
+Die Wireframes wurden in schlichtem Graustufen gehalten und ohne Berücksichtigung von Designelementen wie Farbe und Typografie erstellt. Für die regelmäßige Erstellung und Anordnung der Komponenten hat sich nach einigen Entwürfen die Leinwandbreite von 1160 Pixel mit einem Raster von 27x37 Pixel als vorteilhaft erwiesen.
 
-Wireframes wurden für die Seiten/ Dialoge
+
+Wireframes wurden für folgende Seiten/Dialoge erstellt:
 
 \begin{itemize}
     \item Landingpage,
@@ -200,21 +200,21 @@ Wireframes wurden für die Seiten/ Dialoge
 
 erstellt.
 
-Die Art und Detailtiefe der Ausgestaltung zeigen exemplarisch die folgenden Wireframes.
+Die Art und Detailtiefe der Ausgestaltung zeigen exemplarisch die Wireframes in Abbildung \ref{fig:Startseite} und \ref{fig:Marktplatz}.
 
-\begin{figure}
+\begin{figure}[!htb]
     %\centering
     % https://latex.org/forum/viewtopic.php?t=29653
     \begin{minipage}[t]{0.5\textwidth}
         % [//]: # (BILD Wireframes)
         \includegraphics[page=2, width=1\textwidth]{figures/jan/wire_example.pdf}
-        \caption[Startseite (DHT)]{Startseite (DHT)}
-        \label{fig:image}
+        \caption[Startseite (\acrshort{dht})]{Startseite (\acrshort{dht})}
+        \label{fig:Startseite}
     \end{minipage}
     \begin{minipage}[t]{0.5\textwidth}
         % [//]: # (BILD Wireframes)
         \includegraphics[page=1, width=1\textwidth]{figures/jan/wire_example.pdf}
-        \caption[Marktplatz (DHT)]{Marktplatz (DHT)}
-        \label{fig:image}
+        \caption[Marktplatz (\acrshort{dht})]{Marktplatz (\acrshort{dht})}
+        \label{fig:Marktplatz}
     \end{minipage}
 \end{figure}
