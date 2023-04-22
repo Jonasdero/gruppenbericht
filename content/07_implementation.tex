@@ -17,20 +17,20 @@ Bei dem Aufruf der Plattform \glqq Digital Dahoam\grqq \ wird der Nutzer auf die
 Auf der Landing-Page wird die Vision der Plattform vorgestellt. Bei dem Projekt \glqq Digital Dahoam\grqq \ geht es darum, dass sich Menschen in der Nachbarschaft vernetzen können. Die Plattform soll zudem die Menschen dazu motivieren, anderen zu helfen, bzw. selbst um Hilfe zu bitten. Insbesondere für neu zugezogene Menschen soll die Plattform eine Möglichkeit sein, die Umgebung zu entdecken und interessante Vereine kennenzulernen.
 
 \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=.9\textwidth]{figures/boas/21_landing_page.png}
-  \caption[]{Bildschirmaufnahme der Startseite für nicht eingeloggte Nutzer}
-  \label{fig:landing_page}
+    \centering
+    \includegraphics[width=.9\textwidth]{figures/boas/21_landing_page.png}
+    \caption[]{Bildschirmaufnahme der Startseite für nicht eingeloggte Nutzer}
+    \label{fig:landing_page}
 \end{figure}
 
 Will sich ein Benutzer bspw. ein Vereinsvorstand mit seinem Verein registrieren, kann er über den Button \glqq Für Vereine\grqq \ zur Landing Page für Vereine navigieren. Über die Landing Page für Vereine kann der Vorstand seinen Verein bei der Plattform registrieren oder sich einloggen (s. \autoref{fig:landing_page_verein}). Der Inhalt der Landing Page beschreibt, welche Vorteile die Plattform für Vereine bietet.
 
 
 \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=.9\textwidth]{figures/boas/21_landing_page_verein.png}
-  \caption[]{Bildschirmaufnahme der Startseite für nicht eingeloggte Vereine}
-  \label{fig:landing_page_verein}
+    \centering
+    \includegraphics[width=.9\textwidth]{figures/boas/21_landing_page_verein.png}
+    \caption[]{Bildschirmaufnahme der Startseite für nicht eingeloggte Vereine}
+    \label{fig:landing_page_verein}
 \end{figure}
 
 Wenn der Benutzer eingeloggt ist, wird er auf das Dashboard weitergeleitet, das aktuelle Beiträge und Veranstaltungen anzeigt.
@@ -53,11 +53,11 @@ Dazu gehören Funktionen wie das Folgen von anderen Nutzern oder auch das Schrei
 Dies soll direkt vom Profil eines Nutzers aus möglich sein.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=1\textwidth]{figures/implementation/profile-header.png}
-    \caption{Übersicht eines Benutzerprofils}
-    \label{fig:userProfileHeader}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=1\textwidth]{figures/implementation/profile-header.png}
+        \caption{Übersicht eines Benutzerprofils}
+        \label{fig:userProfileHeader}
+    \end{centering}
 \end{figure}
 
 Hier sieht man die verschiedenen Informationen, die ein Nutzer in seinem Profil angeben kann.
@@ -75,11 +75,11 @@ Außerdem wird bei der Anmeldung über Google das Profilbild mit in Firebase ges
 Die Anmeldemaske sieht wie folgt aus:
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=.75\textwidth]{figures/implementation/anmeldemaske.png}
-    \caption{Anmeldemaske}
-    \label{fig:login}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=.75\textwidth]{figures/implementation/anmeldemaske.png}
+        \caption{Anmeldemaske}
+        \label{fig:login}
+    \end{centering}
 \end{figure}
 
 Um diese Daten in der Anwendung zu speichern, wird ein eigener Benutzerdatensatz angelegt, sobald ein Nutzer registriert wurde und Daten aus dem internen Benutzerprofil von Firebase mit übertragen.
@@ -146,19 +146,19 @@ Im folgenden wird nun anhand von Bildschirmaufnahmen gezeigt, wie der Authentifi
 Beim Klick auf den Registrieren-Button der Landing-Page wird man auf eine Seite weitergeleitet, über die Benutzername, Email und Passwort eingegeben werden können (s. \autoref{fig:registrierung}). Fehlerhafte Eingaben der E-Mail-Adresse, sowie die redundante Eingabe des Passworts werden hierbei validiert.
 
 \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.5\textwidth]{figures/boas/21_registrieren.png}
-  \caption[]{Registrierungsseite}
-  \label{fig:registrierung}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/boas/21_registrieren.png}
+    \caption[]{Registrierungsseite}
+    \label{fig:registrierung}
 \end{figure}
 
 Nach der erfolgreichen Registrierung des Nutzers, wird er zunächst auf eine Seite geführt, auf der er seine Profilinformationen um das Geburtsdatum und die Postleitzahl ergänzen kann (s. \autoref{fig:registrieren_profilinfo}).
 
 \begin{figure}[htb]
-  \centering
-  \includegraphics[width=0.9\textwidth]{figures/boas/21_registrieren_profilinfo.png}
-  \caption[]{Ergänzen der Profilinformationen beim ersten Anmelden}
-  \label{fig:registrieren_profilinfo}
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/boas/21_registrieren_profilinfo.png}
+    \caption[]{Ergänzen der Profilinformationen beim ersten Anmelden}
+    \label{fig:registrieren_profilinfo}
 \end{figure}
 
 Nach der erfolgreichen Registrierung wird der Nutzer auf sein Profil weitergeleitet, wo er u. a. Interessen hinterlegen kann, um von Nutzern gefunden zu werden, welche die gleichen Interessen haben. Details hierzu sind in \autoref{sec:profilepictures} beschrieben.
@@ -166,19 +166,19 @@ Nach der erfolgreichen Registrierung wird der Nutzer auf sein Profil weitergelei
 Eine besonders einfache Möglichkeit, sich bei der Plattform zu registrieren, bzw. anzumelden ist die Authentifizierung über Google. Beim Klick auf das Google-Icon öffnet sich direkt der Google-OAuth-Dialog (s. \autoref{fig:anmelden_google}). Dies steigert die Usability der Plattform, da der Nutzer nicht mehr die E-Mail-Adresse und das Passwort eingeben muss.
 
 \begin{figure}[htb]
-  \centering
-  \includegraphics[width=0.6\textwidth]{figures/boas/21_anmelden_google.png}
-  \caption[]{Authentifizierungs-Dialog beim Anmelden mit Google}
-  \label{fig:anmelden_google}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/boas/21_anmelden_google.png}
+    \caption[]{Authentifizierungs-Dialog beim Anmelden mit Google}
+    \label{fig:anmelden_google}
 \end{figure}
 
 Wenn der Nutzer sich mit einer E-Mail-Adresse registriert hat, kann er sich auf folgender Seite anmelden (s. \autoref{fig:anmeldung}).
 
 \begin{figure}[htb]
-  \centering
-  \includegraphics[width=0.5\textwidth]{figures/boas/21_anmelden.png}
-  \caption[]{Anmeldeseite}
-  \label{fig:anmeldung}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/boas/21_anmelden.png}
+    \caption[]{Anmeldeseite}
+    \label{fig:anmeldung}
 \end{figure}
 
 \clearpage
@@ -191,11 +191,11 @@ Diese werden dann in der Anwendung aktualisiert und in der Datenbank gespeichert
 Hier kann außerdem der komplette Account gelöscht werden, um die Daten des Nutzers zu löschen.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=1\textwidth]{figures/implementation/userSettings.png}
-    \caption{Benutzereinstellungen}
-    \label{fig:userSettings}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=1\textwidth]{figures/implementation/userSettings.png}
+        \caption{Benutzereinstellungen}
+        \label{fig:userSettings}
+    \end{centering}
 \end{figure}
 
 \subsection{Profilseite \& Profilbilder}
@@ -208,11 +208,11 @@ Dies wird dann im Firebase Storage gespeichert und in der Datenbank verlinkt.
 Das Ganze ist so aufgebaut, dass Nutzer zwischen einer Vorschau, also der Sicht, die auch andere Nutzer von seinem Profil sehen und der Bearbeitungssicht unterscheiden können.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=1\textwidth]{figures/implementation/my-profile-header.png}
-    \caption{Persönliches Profil}
-    \label{fig:myProfileHeader}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=1\textwidth]{figures/implementation/my-profile-header.png}
+        \caption{Persönliches Profil}
+        \label{fig:myProfileHeader}
+    \end{centering}
 \end{figure}
 
 \subsection{Blockierte Nutzer}
@@ -224,11 +224,11 @@ Blockierte Nutzer können dann nicht mehr auf das Profil des Blockierenden zugre
 Über die Profilseite kann ein Nutzer einen anderen Nutzer blockieren.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=1\textwidth]{figures/implementation/profile-header.png}
-    \caption{Blockieren eines Nutzers}
-    \label{fig:blockUser}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=1\textwidth]{figures/implementation/profile-header.png}
+        \caption{Blockieren eines Nutzers}
+        \label{fig:blockUser}
+    \end{centering}
 \end{figure}
 
 Blockierte Nutzer kann man dann in der Anwendung unter dem Menüpunkt \textit{Blockiert} einsehen.
@@ -236,11 +236,11 @@ Dort wird jeder Nutzer oder Verein aufgeführt, welcher blockiert ist.
 Mit einem Klick auf das „X“ wird der Block aufgehoben.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=.5\textwidth]{figures/implementation/blocked.png}
-    \caption{Blockierte Nutzer}
-    \label{fig:blocked}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=.5\textwidth]{figures/implementation/blocked.png}
+        \caption{Blockierte Nutzer}
+        \label{fig:blocked}
+    \end{centering}
 \end{figure}
 
 \section{Beiträge}
@@ -252,10 +252,10 @@ Beiträge können von allen Nutzern erstellt werden, die sich registriert haben.
 Es gibt folgende Typen von Beiträgen:
 
 \begin{itemize}
-  \item \textbf{Anfrage}: Hier können Nutzer eine Anfrage stellen, die dann von anderen Nutzern beantwortet werden kann. Anfragen können auch benutzt werden, wenn bestimmte Gegenstände im Haushalt fehlen, z. B. ein bestimmtes Werkzeug oder ein bestimmtes Lebensmittel.
-  \item \textbf{Angebot}: Hier können Nutzer ein Angebot erstellen, das dann von anderen Nutzern angenommen werden kann. Dies kann wie Ebay-Kleinanzeigen benutzt werden, um überflüssige Gegenstände zu verkaufen.
-  \item \textbf{Information}: Hier können Nutzer Informationen teilen, die für andere Nutzer interessant sein könnten.
-  \item \textbf{Veranstaltung}: Hier können Nutzer Veranstaltungen erstellen, die dann von anderen Nutzern besucht werden können.
+    \item \textbf{Anfrage}: Hier können Nutzer eine Anfrage stellen, die dann von anderen Nutzern beantwortet werden kann. Anfragen können auch benutzt werden, wenn bestimmte Gegenstände im Haushalt fehlen, z. B. ein bestimmtes Werkzeug oder ein bestimmtes Lebensmittel.
+    \item \textbf{Angebot}: Hier können Nutzer ein Angebot erstellen, das dann von anderen Nutzern angenommen werden kann. Dies kann wie Ebay-Kleinanzeigen benutzt werden, um überflüssige Gegenstände zu verkaufen.
+    \item \textbf{Information}: Hier können Nutzer Informationen teilen, die für andere Nutzer interessant sein könnten.
+    \item \textbf{Veranstaltung}: Hier können Nutzer Veranstaltungen erstellen, die dann von anderen Nutzern besucht werden können.
 \end{itemize}
 
 \subsection{Beiträge erstellen}
@@ -268,11 +268,11 @@ Für Veranstaltungen gibt es zusätzlich noch den Ort und das Datum.
 Sobald auf \textit{absenden} geklickt wird, wird der Beitrag in der Datenbank gespeichert und auf der Startseite angezeigt.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=.65\textwidth]{figures/implementation/createpost.png}
-    \caption{Beiträge erstellen}
-    \label{fig:createpost}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=.65\textwidth]{figures/implementation/createpost.png}
+        \caption{Beiträge erstellen}
+        \label{fig:createpost}
+    \end{centering}
 \end{figure}
 
 
@@ -283,38 +283,38 @@ Unter \textit{Alle Beiträge} findet man alle Beiträge, die ein valides Gültig
 Für Veranstaltungen gibt es zusätzlich noch den Ort und das Datum.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=.8\textwidth]{figures/implementation/beitrag.png}
-    \caption{Beitrag}
-    \label{fig:beitrag}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=.8\textwidth]{figures/implementation/beitrag.png}
+        \caption{Beitrag}
+        \label{fig:beitrag}
+    \end{centering}
 \end{figure}
 
 Ein Problem, was es während der Implementierung zu lösen galt, war die richtige Filterung der Beiträge. Die hier verwendete Sortierfunktion (siehe \ref{code:filterPosts}) wurde dann für die restlichen Listen verwendet und die gefilterten Beiträge dort nur noch verfeinert.
 Diese musste folgendes erfüllen:
 
 \begin{itemize}
-  \item Eigene Beiträge werden immer angezeigt.
-  \item Beiträge, die nicht mehr gültig sind, werden nicht angezeigt.
-  \item Beiträge von blockierten Nutzern werden nicht angezeigt.
-  \item Beiträge müssen nach Datum sortiert werden.
+    \item Eigene Beiträge werden immer angezeigt.
+    \item Beiträge, die nicht mehr gültig sind, werden nicht angezeigt.
+    \item Beiträge von blockierten Nutzern werden nicht angezeigt.
+    \item Beiträge müssen nach Datum sortiert werden.
 \end{itemize}
 
 Mit dem Klick auf die 3 kleinen Punkte in der rechten oberen Ecke öffnet man das Beitragsmenü. Hier gibt es folgende Punkte:
 
 \begin{itemize}
-  \item \textbf{Beitrag zum Merkzettel}: Hinzufügen eines Inhalts zum Merkzettel.
-  \item \textbf{Details}: Anzeigen der Details des Beitrags. (siehe \ref{fig:details})
-  \item \textbf{Zum Autor}: Direkter Link zum Profil des Autors.
-  \item \textbf{Nachricht an Autor}: Direkter Link zur Nachrichtenfunktion, um dem Autor eine Nachricht zu schicken.
+    \item \textbf{Beitrag zum Merkzettel}: Hinzufügen eines Inhalts zum Merkzettel.
+    \item \textbf{Details}: Anzeigen der Details des Beitrags. (siehe \ref{fig:details})
+    \item \textbf{Zum Autor}: Direkter Link zum Profil des Autors.
+    \item \textbf{Nachricht an Autor}: Direkter Link zur Nachrichtenfunktion, um dem Autor eine Nachricht zu schicken.
 \end{itemize}
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=.25\textwidth]{figures/implementation/beitragsmenü.png}
-    \caption{Beitragsmenü}
-    \label{fig:beitragsmenü}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=.25\textwidth]{figures/implementation/beitragsmenü.png}
+        \caption{Beitragsmenü}
+        \label{fig:beitragsmenü}
+    \end{centering}
 \end{figure}
 
 \clearpage
@@ -325,11 +325,11 @@ Auf der Profilseite kann der Nutzer werden seine Beiträge angezeigt.
 Hier werden auch abgelaufene Beiträge angezeigt und grau hinterlegt.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=1\textwidth]{figures/implementation/userposts.png}
-    \caption{Beiträge des Nutzers}
-    \label{fig:userposts}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=1\textwidth]{figures/implementation/userposts.png}
+        \caption{Beiträge des Nutzers}
+        \label{fig:userposts}
+    \end{centering}
 \end{figure}
 
 \subsection{Merkzettel}
@@ -339,11 +339,11 @@ Beiträge, die für den Merkzettel markiert sind erscheinen dort, und können do
 Außerdem werden sie nach Beitragstyp gruppiert.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=1\textwidth]{figures/implementation/merkzettel.png}
-    \caption{Merkzettel}
-    \label{fig:merkzettel}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=1\textwidth]{figures/implementation/merkzettel.png}
+        \caption{Merkzettel}
+        \label{fig:merkzettel_impl}
+    \end{centering}
 \end{figure}
 
 \clearpage
@@ -354,11 +354,11 @@ Auf dem Marktplatz können Personen und Beiträge durchsucht werden.
 Durch den Filter auf Kategorien, Informationen oder Veranstaltungen findet man schnell den richtigen Beitrag.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=1\textwidth]{figures/implementation/marktplatz.png}
-    \caption{Marktplatz}
-    \label{fig:marktplatz}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=1\textwidth]{figures/implementation/marktplatz.png}
+        \caption{Marktplatz}
+        \label{fig:marktplatz}
+    \end{centering}
 \end{figure}
 
 
@@ -368,11 +368,11 @@ Durch den Filter auf Kategorien, Informationen oder Veranstaltungen findet man s
 Auf der Startseite werden aktuelle Beiträge aus der Nähe angezeigt, sowie die Veranstaltungen, die der Nutzer auf dem Merkzettel hat.
 
 \begin{figure}[ht!]
-  \begin{centering}
-    \includegraphics[width=.8\textwidth]{figures/implementation/dashboard.png}
-    \caption{Dashboard}
-    \label{fig:dashboard}
-  \end{centering}
+    \begin{centering}
+        \includegraphics[width=.8\textwidth]{figures/implementation/dashboard.png}
+        \caption{Dashboard}
+        \label{fig:dashboard}
+    \end{centering}
 \end{figure}
 
 \section{Chat}
@@ -389,10 +389,10 @@ Für den Chat wird die Firebase Realtime Database (Realtime DB) verwendet. Dadur
 Die Firebase DB wird in diesem Projekt ausschließlich für den Chat verwendet und hat dabei zwei Hauptwurzelelemente (s. \autoref{fig:hauptwurzel_realtime_db}) verwendet werden. Bei dem Design wurde darauf geachtet, dass die einzelnen Hauptwurzelelemente keine zu große Verschachtelung aufweisen, um eine gute Performanz zu gewährleisten.
 
 \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/boas/21_hauptwurzel_realtime_db.png}
-  \caption[]{Hauptwurzelelemente der Realtime DB}
-  \label{fig:hauptwurzel_realtime_db}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/boas/21_hauptwurzel_realtime_db.png}
+    \caption[]{Hauptwurzelelemente der Realtime DB}
+    \label{fig:hauptwurzel_realtime_db}
 \end{figure}
 
 
@@ -423,28 +423,28 @@ Eine wichtige Anforderung für die Implementierung einer Chatfunktionalität ist
 Im folgenden wird anhand von Screenshots die Benutzung des Chats beschrieben. \autoref{fig:chat_screenshot} zeigt die Standardansicht des Chats. Auf der linken Seite sind die Chaträume aufgelistet. Die Chaträume sind in zwei Kategorien unterteilt. Zum einen gibt es die Chaträume, die mit Einzelpersonen erstellt wurden und zum anderen die Chaträume mit mehreren Personen (Gruppenchats). In der Liste der Chaträume werden Gruppenchats mit einem Gruppenicon hervorgehoben.
 
 \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=1\textwidth]{figures/boas/21_chat.png}
-  \caption[]{Ansicht des Chats in der Anwendung}
-  \label{fig:chat_screenshot}
+    \centering
+    \includegraphics[width=1\textwidth]{figures/boas/21_chat.png}
+    \caption[]{Ansicht des Chats in der Anwendung}
+    \label{fig:chat_screenshot}
 \end{figure}
 
 Über den Button \glqq Chat hinzufügen\grqq \ wir die in \autoref{fig:new_personal_chat} dargestellte Ansicht geöffnet, wo alle Personen der Plattform angezeigt werden. Hier kann ein neuer Chat mit einer Einzelperson erstellt werden.
 
 \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=.9\textwidth]{figures/boas/21_new_chat.jpeg}
-  \caption[]{Hinzufügen von Chats mit Einzelpersonen}
-  \label{fig:new_personal_chat}
+    \centering
+    \includegraphics[width=.9\textwidth]{figures/boas/21_new_chat.jpeg}
+    \caption[]{Hinzufügen von Chats mit Einzelpersonen}
+    \label{fig:new_personal_chat}
 \end{figure}
 
 Das Hinzufügen von Gruppenchats erfolgt über den Button \glqq Gruppe hinzufügen\grqq. Der Ablauf sieht hier wie folgt aus. Zuerst wird automatisch ein neuer Chatraum erstellt. Wird dieser ausgewählt, lässt sich über einen Button die in \autoref{fig:edit_chat_group} dargestellte Ansicht öffnen. Hier können die Mitglieder des Chatraumes hinzugefügt werden, indem die entsprechenden Personen aus der Liste ausgewählt werden. Es besteht zudem die Möglichkeit, der Chatgruppe einen anderen Namen zu geben.
 
 \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=.9\textwidth]{figures/boas/21_edit_chat_group.jpeg}
-  \caption[]{Chatgruppe umbenennen und Mitglieder hinzufügen}
-  \label{fig:edit_chat_group}
+    \centering
+    \includegraphics[width=.9\textwidth]{figures/boas/21_edit_chat_group.jpeg}
+    \caption[]{Chatgruppe umbenennen und Mitglieder hinzufügen}
+    \label{fig:edit_chat_group}
 \end{figure}
 
 \subsection{Verknüpfung von Beitragen mit dem Chatraum des Beitragautors}
@@ -455,10 +455,10 @@ Die Motivation des in diesem Absatz beschriebenen Features wird mit folgendem Fa
 Angenommen, ein Benutzer meldet sich an, da er an Fußball interessiert ist und gerne mit Menschen aus seiner Nachbarschaft gerne zum Fußball spielen treffen möchte. Er sieht nun einen Beitrag, der genau diesem Bedürfnis entspricht. Wie in \autoref{fig:beitrag_nachricht} dargestellt, kann er nun über den Button \glqq Nachricht an Autor\grqq direkt zum Chatraum des Beitragautors gelangen. Dort kann er den Beitragautor anschreiben und sich mit ihm zum Fußball spielen treffen.
 
 \begin{figure}[!htb]
-  \centering
-  \includegraphics[width=.7\textwidth]{figures/boas/21_beitrag_nachricht.jpg}
-  \caption[]{Möglichkeit von einem Beitrag direkt zum Chatraum des Beitragautors zu gelangen}
-  \label{fig:beitrag_nachricht}
+    \centering
+    \includegraphics[width=.7\textwidth]{figures/boas/21_beitrag_nachricht.jpg}
+    \caption[]{Möglichkeit von einem Beitrag direkt zum Chatraum des Beitragautors zu gelangen}
+    \label{fig:beitrag_nachricht}
 \end{figure}
 
 Im Hintergrund muss dafür der gemeinsame Chatraum ermittelt werden. Falls dieser noch nicht existiert, muss er erstellt werden. Wird dann der Nutzer auf die Chatseite weitergeleitet, öffnet sich automatisch der entsprechende Chatraum.
